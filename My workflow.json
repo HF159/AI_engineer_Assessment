@@ -1,0 +1,665 @@
+{
+  "name": "My workflow",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "intake",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        -240,
+        -112
+      ],
+      "id": "9be0be4a-ba3b-4dd0-8250-8b946d464259",
+      "name": "Webhook",
+      "webhookId": "4af84454-fd49-4dc0-a943-ed6bb5ec361c"
+    },
+    {
+      "parameters": {
+        "authentication": "serviceAccount",
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "1iRZAXvvScl0IBaWZElzWK5e7Fbx8PdDrLlp-0-qTQUg",
+          "mode": "list",
+          "cachedResultName": "valsoft assessment",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1iRZAXvvScl0IBaWZElzWK5e7Fbx8PdDrLlp-0-qTQUg/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "main_queue ",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1iRZAXvvScl0IBaWZElzWK5e7Fbx8PdDrLlp-0-qTQUg/edit#gid=0"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "ticket_id": "={{ $json.ticket_id }}",
+            "received_at": "={{ $json.received_at }}",
+            "source": "={{ $json.source }}",
+            "category": "={{$json.category}}",
+            "priority": "={{$json.priority}}",
+            "confidence": "={{$json.confidence}}",
+            "escalation_flag": "={{$json.escalation_flag}}",
+            "escalation_reason": "={{$json.escalation_reason}}",
+            "routing_destination": "={{$json.routing_destination}}",
+            "core_issue": "={{$json.core_issue}}",
+            "summary": "={{$json.summary}}",
+            "account_id": "={{$json.entities.account_id}}",
+            "error_code": "={{$json.entities.error_code}}",
+            "amount_usd": "={{$json.entities.amount_usd}}",
+            "affected_users": "={{$json.entities.affected_users}}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "ticket_id",
+              "displayName": "ticket_id",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "received_at",
+              "displayName": "received_at",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "source",
+              "displayName": "source",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "category",
+              "displayName": "category",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "priority",
+              "displayName": "priority",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "confidence",
+              "displayName": "confidence",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "escalation_flag",
+              "displayName": "escalation_flag",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "escalation_reason",
+              "displayName": "escalation_reason",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "routing_destination",
+              "displayName": "routing_destination",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "core_issue",
+              "displayName": "core_issue",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "summary",
+              "displayName": "summary",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "account_id",
+              "displayName": "account_id",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "error_code",
+              "displayName": "error_code",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "amount_usd",
+              "displayName": "amount_usd",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "affected_users",
+              "displayName": "affected_users",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {
+          "useAppend": true
+        }
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        1504,
+        -32
+      ],
+      "id": "72ce7ee3-202a-4465-bb86-548c09b57298",
+      "name": "Append row in sheet",
+      "credentials": {
+        "googleApi": {
+          "id": "2774kHihwOPKp5Dd",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "a6191ec0-e401-450d-b29d-04b71fd215d2",
+              "name": "ticket_id",
+              "value": "={{\"tkt_\" + $now.toMillis() + \"_\" + Math.random().toString(36).slice(2,7)}}",
+              "type": "string"
+            },
+            {
+              "id": "9b76a523-00d9-40a8-a253-84eb39c83d96",
+              "name": "source",
+              "value": "={{ $json.body.source }}",
+              "type": "string"
+            },
+            {
+              "id": "b47b17a3-ec77-4d67-ac36-5a0b616f2c42",
+              "name": "raw_message",
+              "value": "={{ $json.body.raw_message }}",
+              "type": "string"
+            },
+            {
+              "id": "e5fbe35c-793a-4039-9b62-44755f3b1e69",
+              "name": "received_at",
+              "value": "={{$json.received_at ?? $now.toISO()}}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -32,
+        -112
+      ],
+      "id": "44856aed-c1fb-4bc7-8683-7a0f7d6a20ad",
+      "name": "Edit Fields"
+    },
+    {
+      "parameters": {
+        "modelId": {
+          "__rl": true,
+          "value": "gpt-4o-mini",
+          "mode": "id"
+        },
+        "responses": {
+          "values": [
+            {
+              "role": "system",
+              "content": "You are an intake triage assistant for a B2B SaaS support system.\n\nYour job is to analyze an inbound customer message and return a structured JSON object. You must always return valid JSON and nothing else — no preamble, no explanation, no markdown.\n\n## Classification rules\n\nAssign exactly one category from this list:\n- \"Bug Report\" — the customer reports something that was working and is now broken, or an error they did not expect.\n- \"Feature Request\" — the customer is asking for new functionality or an enhancement.\n- \"Billing Issue\" — the customer has a question or dispute about an invoice, charge, or contract.\n- \"Technical Question\" — the customer is asking how to do something or whether a feature exists. Not a broken behavior — a capability question.\n- \"Incident/Outage\" — the customer reports that a service or feature is completely unavailable, affecting one or more users right now.\n\nIf the message is ambiguous, pick the single best-fit category and reflect your uncertainty in the confidence score.\n\nAssign priority:\n- \"High\" — service is down, a user is completely blocked, or the issue is actively impacting business operations.\n- \"Medium\" — something is wrong or unclear but the user can still work around it.\n- \"Low\" — informational, feature requests, capability questions, or pre-sales inquiries. Default to Low unless the customer explicitly states business urgency.\n\nAssign confidence as a float from 0.0 to 1.0 reflecting how certain you are about the category assignment. Be honest — if the message is ambiguous or could fit multiple categories, score accordingly.\n\n## Entity extraction rules\n\nExtract only what is explicitly stated in the message. Do not infer or guess values that are not present. Use null for any field not found.\n\n- account_id: the username or ID only. If the value appears inside a URL path like \"arcvault.io/user/jsmith\", extract only \"jsmith\". Never return a full URL or path.\n- invoice_number: any invoice or ticket number\n- error_code: any HTTP status code or application error code\n- amount_usd: any dollar amount mentioned, as a number (not a string)\n- affected_users: \"single\", \"multiple\", or null\n- other_identifiers: any other identifiers not covered above, as an array of strings\n\n## Summary rules\n\nWrite 2-3 sentences addressed to the team that will receive this ticket. The summary should tell them what the customer's problem is, what context matters for acting on it, and any urgency signals present in the message. Do not repeat the raw message — synthesize it.\n\n## Output format\n\nReturn exactly this JSON structure with no additional fields:\n\n{\n  \"category\": string,\n  \"priority\": string,\n  \"confidence\": float,\n  \"core_issue\": string,\n  \"entities\": {\n    \"account_id\": string | null,\n    \"invoice_number\": string | null,\n    \"error_code\": string | null,\n    \"amount_usd\": number | null,\n    \"affected_users\": string | null,\n    \"other_identifiers\": array\n  },\n  \"urgency_signal\": string,\n  \"summary\": string\n}"
+            },
+            {
+              "content": "=Source: {{ $json.source }}\nMessage: {{$json.raw_message}}"
+            }
+          ]
+        },
+        "builtInTools": {},
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.openAi",
+      "typeVersion": 2.3,
+      "position": [
+        176,
+        -112
+      ],
+      "id": "80c044f3-3f63-48dc-910d-f082c62d8c86",
+      "name": "Message a model",
+      "credentials": {
+        "openAiApi": {
+          "id": "ioV6YXsRb6zLC6yJ",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "const raw = $input.first().json.output[0].content[0].text;\n\nlet parsed;\ntry {\n  parsed = JSON.parse(raw);\n} catch (e) {\n  return [{\n    json: {\n      ticket_id: $('Edit Fields').first().json.ticket_id,\n      source: $('Edit Fields').first().json.source,\n      raw_message: $('Edit Fields').first().json.raw_message,\n      received_at: $('Edit Fields').first().json.received_at,\n      parse_failed: true,\n      escalation_flag: true,\n      escalation_reason: \"JSON parse failure on LLM output\"\n    }\n  }];\n}\n\nconst required = [\"category\", \"priority\", \"confidence\", \"core_issue\", \"entities\", \"urgency_signal\", \"summary\"];\nconst missing = required.filter(f => parsed[f] === undefined);\n\nif (missing.length > 0) {\n  return [{\n    json: {\n      ticket_id: $('Edit Fields').first().json.ticket_id,\n      source: $('Edit Fields').first().json.source,\n      raw_message: $('Edit Fields').first().json.raw_message,\n      received_at: $('Edit Fields').first().json.received_at,\n      parse_failed: true,\n      escalation_flag: true,\n      escalation_reason: `Missing fields: ${missing.join(\", \")}`\n    }\n  }];\n}\n\nreturn [{\n  json: {\n    ticket_id: $('Edit Fields').first().json.ticket_id,\n    source: $('Edit Fields').first().json.source,\n    raw_message: $('Edit Fields').first().json.raw_message,\n    received_at: $('Edit Fields').first().json.received_at,\n    parse_failed: false,\n    ...parsed\n  }\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        608,
+        -128
+      ],
+      "id": "38a2838d-532b-453e-b644-9245b2f5738a",
+      "name": " Code (Parse + Validate)"
+    },
+    {
+      "parameters": {
+        "jsCode": "const item = $input.first().json;\n\nif (item.parse_failed) {\n  return [{ json: item }];\n}\n\nconst message = (item.raw_message ?? \"\").toLowerCase();\nconst amountUsd = item.entities?.amount_usd ?? 0;\n\nlet escalation_flag = false;\nlet escalation_reason = null;\n\nif (item.confidence < 0.7) {\n  escalation_flag = true;\n  escalation_reason = `Low confidence: ${item.confidence}`;\n}\n\nif (/outage|down for all|down for everyone|multiple users affected|multiple users/i.test(message)) {\n  escalation_flag = true;\n  escalation_reason = escalation_reason\n    ? escalation_reason + \" + keyword match\"\n    : \"Keyword match: outage/multiple users\";\n}\n\nif (item.category === \"Billing Issue\" && amountUsd > 500) {\n  escalation_flag = true;\n  escalation_reason = escalation_reason\n    ? escalation_reason + \" + billing threshold\"\n    : `Billing amount $${amountUsd} exceeds threshold`;\n}\n\nreturn [{\n  json: {\n    ...item,\n    escalation_flag,\n    escalation_reason\n  }\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        848,
+        -128
+      ],
+      "id": "414985a3-aabe-46c4-9455-267d68a7362f",
+      "name": "Code (Escalation Rules)"
+    },
+    {
+      "parameters": {
+        "jsCode": "const item = $input.item.json;\n\nconst routingMap = {\n  \"Bug Report\": \"Engineering\",\n  \"Feature Request\": \"Product\",\n  \"Billing Issue\": \"Billing\",\n  \"Technical Question\": \"IT/Security\",\n  \"Incident/Outage\": \"Engineering\"\n};\n\nconst routing_destination = item.escalation_flag\n  ? \"Escalation\"\n  : (routingMap[item.category] ?? \"Escalation\");\n\nreturn [{\n  json: {\n    ...item,\n    routing_destination\n  }\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1056,
+        -128
+      ],
+      "id": "ad3131f7-6fc5-45c9-89f5-7bba236b5413",
+      "name": "Code (Routing)"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "loose",
+            "version": 3
+          },
+          "conditions": [
+            {
+              "id": "34143e43-c2dd-4039-83fe-a843c25b2a70",
+              "leftValue": "={{$json.escalation_flag}}",
+              "rightValue": "true",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "looseTypeValidation": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.3,
+      "position": [
+        1296,
+        -112
+      ],
+      "id": "a0e62acf-c41b-43ff-a29e-b9c10d04732e",
+      "name": "If"
+    },
+    {
+      "parameters": {
+        "authentication": "serviceAccount",
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "1iRZAXvvScl0IBaWZElzWK5e7Fbx8PdDrLlp-0-qTQUg",
+          "mode": "list",
+          "cachedResultName": "valsoft assessment",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1iRZAXvvScl0IBaWZElzWK5e7Fbx8PdDrLlp-0-qTQUg/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 1682154459,
+          "mode": "list",
+          "cachedResultName": "escalation_queue ",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1iRZAXvvScl0IBaWZElzWK5e7Fbx8PdDrLlp-0-qTQUg/edit#gid=1682154459"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "ticket_id": "={{$json.ticket_id}}",
+            "received_at": "={{$json.received_at}}",
+            "source": "={{$json.source}}",
+            "category": "={{$json.category}}",
+            "priority": "={{$json.priority}}",
+            "confidence": "={{$json.confidence}}",
+            "escalation_flag": "={{$json.escalation_flag}}",
+            "escalation_reason": "={{$json.escalation_reason}}",
+            "routing_destination": "={{$json.routing_destination}}",
+            "core_issue": "={{$json.core_issue}}",
+            "summary": "={{$json.summary}}",
+            "account_id": "={{$json.entities.account_id}}",
+            "error_code": "={{$json.entities.error_code}}",
+            "amount_usd": "={{$json.entities.amount_usd}}",
+            "affected_users": "={{$json.entities.affected_users}}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "ticket_id",
+              "displayName": "ticket_id",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "received_at",
+              "displayName": "received_at",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "source",
+              "displayName": "source",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "category",
+              "displayName": "category",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "priority",
+              "displayName": "priority",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "confidence",
+              "displayName": "confidence",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "escalation_flag",
+              "displayName": "escalation_flag",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "escalation_reason",
+              "displayName": "escalation_reason",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "routing_destination",
+              "displayName": "routing_destination",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "core_issue",
+              "displayName": "core_issue",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "summary",
+              "displayName": "summary",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "account_id",
+              "displayName": "account_id",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "error_code",
+              "displayName": "error_code",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "amount_usd",
+              "displayName": "amount_usd",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "affected_users",
+              "displayName": "affected_users",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {
+          "useAppend": true
+        }
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        1504,
+        -144
+      ],
+      "id": "eb7853c3-852b-4553-ad0f-7dbf2c8dde9e",
+      "name": "Append row in sheet2",
+      "credentials": {
+        "googleApi": {
+          "id": "2774kHihwOPKp5Dd",
+          "name": "Google Sheets account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields": {
+      "main": [
+        [
+          {
+            "node": "Message a model",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Message a model": {
+      "main": [
+        [
+          {
+            "node": " Code (Parse + Validate)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    " Code (Parse + Validate)": {
+      "main": [
+        [
+          {
+            "node": "Code (Escalation Rules)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code (Escalation Rules)": {
+      "main": [
+        [
+          {
+            "node": "Code (Routing)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code (Routing)": {
+      "main": [
+        [
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If": {
+      "main": [
+        [
+          {
+            "node": "Append row in sheet2",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Append row in sheet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate"
+  },
+  "versionId": "e0238bb2-efc9-4233-95fd-39d63242a639",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "dca8a47b4d1e3f6a91b2412d750295215bfefbda8f09c9f8cce899146e17eb03"
+  },
+  "id": "rpx6SbZMacU3CNyP",
+  "tags": []
+}
