@@ -1,6 +1,6 @@
 [
   {
-    "ticket_id": "tkt_REPLACE_WITH_ACTUAL",
+    "ticket_id": "tkt_1739610000000_k3x9m",
     "received_at": "2026-02-15T09:00:00Z",
     "source": "email",
     "category": "Bug Report",
@@ -12,12 +12,13 @@
     "core_issue": "User is experiencing a 403 error when trying to log in, which began after a recent platform update.",
     "summary": "Customer jsmith is completely blocked from logging in due to a 403 error that started after last Tuesday's update. This is likely an access control regression introduced in the deployment. Engineering should investigate auth/permission changes in that release.",
     "account_id": "jsmith",
+    "invoice_number": null,
     "error_code": "403",
     "amount_usd": null,
     "affected_users": "single"
   },
   {
-    "ticket_id": "tkt_REPLACE_WITH_ACTUAL",
+    "ticket_id": "tkt_1739610300000_p2w7n",
     "received_at": "2026-02-15T09:05:00Z",
     "source": "web_form",
     "category": "Feature Request",
@@ -29,12 +30,13 @@
     "core_issue": "Customer is requesting a bulk export feature for audit logs to support compliance workflows.",
     "summary": "A compliance-focused customer is requesting bulk export functionality for audit logs. No urgency or blocking issue — this is a feature enhancement request. Product team should add to backlog for prioritization.",
     "account_id": null,
+    "invoice_number": null,
     "error_code": null,
     "amount_usd": null,
     "affected_users": null
   },
   {
-    "ticket_id": "tkt_REPLACE_WITH_ACTUAL",
+    "ticket_id": "tkt_1739610600000_a8f4q",
     "received_at": "2026-02-15T09:10:00Z",
     "source": "support_portal",
     "category": "Billing Issue",
@@ -46,12 +48,13 @@
     "core_issue": "Customer is disputing invoice #8821 which shows $1,240 against a contract rate of $980/month.",
     "summary": "Customer is reporting a billing discrepancy on invoice #8821 — charged $1,240 against a contracted rate of $980/month, a $260 overage. Escalated for human review due to the invoice amount exceeding the $500 threshold. Billing team should verify the charge and respond to the customer.",
     "account_id": null,
+    "invoice_number": "8821",
     "error_code": null,
     "amount_usd": 1240,
     "affected_users": null
   },
   {
-    "ticket_id": "tkt_REPLACE_WITH_ACTUAL",
+    "ticket_id": "tkt_1739610900000_m5r1t",
     "received_at": "2026-02-15T09:15:00Z",
     "source": "email",
     "category": "Technical Question",
@@ -63,12 +66,13 @@
     "core_issue": "Customer is asking whether SSO with Okta is supported as they evaluate switching authentication providers.",
     "summary": "Customer is in evaluation mode considering Okta for SSO and wants to know if it is supported. No urgency or blocking issue. IT/Security should respond with integration documentation or connect them with the solutions team if this is pre-sales.",
     "account_id": null,
+    "invoice_number": null,
     "error_code": null,
     "amount_usd": null,
     "affected_users": null
   },
   {
-    "ticket_id": "tkt_REPLACE_WITH_ACTUAL",
+    "ticket_id": "tkt_1739611200000_z6h2v",
     "received_at": "2026-02-15T09:20:00Z",
     "source": "web_form",
     "category": "Incident/Outage",
@@ -80,6 +84,7 @@
     "core_issue": "Customer dashboard is completely unavailable, affecting multiple users since approximately 2pm EST.",
     "summary": "Multiple users at this account are unable to load the dashboard as of 2pm EST. Customer has ruled out their own infrastructure. This is an active service outage requiring immediate Engineering response. Escalated automatically due to multi-user impact.",
     "account_id": null,
+    "invoice_number": null,
     "error_code": null,
     "amount_usd": null,
     "affected_users": "multiple"
