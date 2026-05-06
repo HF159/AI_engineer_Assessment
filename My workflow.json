@@ -10,10 +10,10 @@
       "type": "n8n-nodes-base.webhook",
       "typeVersion": 2,
       "position": [
-        -240,
-        -112
+        -1392,
+        -240
       ],
-      "id": "9be0be4a-ba3b-4dd0-8250-8b946d464259",
+      "id": "679204aa-ad17-4c3a-99f8-e7252561a90e",
       "name": "Webhook",
       "webhookId": "4af84454-fd49-4dc0-a943-ed6bb5ec361c"
     },
@@ -50,6 +50,7 @@
             "core_issue": "={{$json.core_issue}}",
             "summary": "={{$json.summary}}",
             "account_id": "={{$json.entities.account_id}}",
+            "invoice_number": "={{$json.entities.invoice_number}}",
             "error_code": "={{$json.entities.error_code}}",
             "amount_usd": "={{$json.entities.amount_usd}}",
             "affected_users": "={{$json.entities.affected_users}}"
@@ -183,6 +184,15 @@
               "canBeUsedToMatch": true
             },
             {
+              "id": "invoice_number",
+              "displayName": "invoice_number",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
               "id": "affected_users",
               "displayName": "affected_users",
               "required": false,
@@ -202,14 +212,14 @@
       "type": "n8n-nodes-base.googleSheets",
       "typeVersion": 4.7,
       "position": [
-        1504,
-        -32
+        352,
+        -160
       ],
-      "id": "72ce7ee3-202a-4465-bb86-548c09b57298",
+      "id": "87239b47-868f-44cb-a3f9-110be6d8daf4",
       "name": "Append row in sheet",
       "credentials": {
         "googleApi": {
-          "id": "2774kHihwOPKp5Dd",
+          "id": "YU24uSzlC8WvHDE1",
           "name": "Google Sheets account"
         }
       }
@@ -239,7 +249,7 @@
             {
               "id": "e5fbe35c-793a-4039-9b62-44755f3b1e69",
               "name": "received_at",
-              "value": "={{$json.received_at ?? $now.toISO()}}",
+              "value": "={{ $json.body.received_at || $now.toISO() }}",
               "type": "string"
             }
           ]
@@ -249,10 +259,10 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        -32,
-        -112
+        -1184,
+        -240
       ],
-      "id": "44856aed-c1fb-4bc7-8683-7a0f7d6a20ad",
+      "id": "f12cde54-cce4-4913-ac87-f872236d12cd",
       "name": "Edit Fields"
     },
     {
@@ -279,15 +289,15 @@
       "type": "@n8n/n8n-nodes-langchain.openAi",
       "typeVersion": 2.3,
       "position": [
-        176,
-        -112
+        -976,
+        -240
       ],
-      "id": "80c044f3-3f63-48dc-910d-f082c62d8c86",
+      "id": "a7f93830-7058-4a20-80a7-2f837af1dc27",
       "name": "Message a model",
       "credentials": {
         "openAiApi": {
-          "id": "ioV6YXsRb6zLC6yJ",
-          "name": "OpenAi account"
+          "id": "4DC4PtZaOtohFnpy",
+          "name": "OpenAI account"
         }
       }
     },
@@ -298,10 +308,10 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        608,
-        -128
+        -544,
+        -256
       ],
-      "id": "38a2838d-532b-453e-b644-9245b2f5738a",
+      "id": "86460ac3-e8ce-46b3-b6b8-d9d8dfd629cb",
       "name": " Code (Parse + Validate)"
     },
     {
@@ -311,10 +321,10 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        848,
-        -128
+        -304,
+        -256
       ],
-      "id": "414985a3-aabe-46c4-9455-267d68a7362f",
+      "id": "7f81c061-26ed-4eca-b57f-e29f5d496c00",
       "name": "Code (Escalation Rules)"
     },
     {
@@ -324,10 +334,10 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        1056,
-        -128
+        -96,
+        -256
       ],
-      "id": "ad3131f7-6fc5-45c9-89f5-7bba236b5413",
+      "id": "ccfbabc0-1398-43a9-a1f7-3bb820682fb1",
       "name": "Code (Routing)"
     },
     {
@@ -359,10 +369,10 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.3,
       "position": [
-        1296,
-        -112
+        144,
+        -240
       ],
-      "id": "a0e62acf-c41b-43ff-a29e-b9c10d04732e",
+      "id": "89eb93bf-005e-449a-a6c1-7441ec8f0981",
       "name": "If"
     },
     {
@@ -398,6 +408,7 @@
             "core_issue": "={{$json.core_issue}}",
             "summary": "={{$json.summary}}",
             "account_id": "={{$json.entities.account_id}}",
+            "invoice_number": "={{$json.entities.invoice_number}}",
             "error_code": "={{$json.entities.error_code}}",
             "amount_usd": "={{$json.entities.amount_usd}}",
             "affected_users": "={{$json.entities.affected_users}}"
@@ -531,6 +542,15 @@
               "canBeUsedToMatch": true
             },
             {
+              "id": "invoice_number",
+              "displayName": "invoice_number",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
               "id": "affected_users",
               "displayName": "affected_users",
               "required": false,
@@ -550,14 +570,14 @@
       "type": "n8n-nodes-base.googleSheets",
       "typeVersion": 4.7,
       "position": [
-        1504,
-        -144
+        352,
+        -272
       ],
-      "id": "eb7853c3-852b-4553-ad0f-7dbf2c8dde9e",
+      "id": "3f3d47c4-6322-4313-bbb2-dfe89a235fe6",
       "name": "Append row in sheet2",
       "credentials": {
         "googleApi": {
-          "id": "2774kHihwOPKp5Dd",
+          "id": "YU24uSzlC8WvHDE1",
           "name": "Google Sheets account"
         }
       }
@@ -650,16 +670,16 @@
       ]
     }
   },
-  "active": true,
+  "active": false,
   "settings": {
     "executionOrder": "v1",
     "binaryMode": "separate"
   },
-  "versionId": "e0238bb2-efc9-4233-95fd-39d63242a639",
+  "versionId": "ae685167-6187-4774-9795-0625ff674b30",
   "meta": {
     "templateCredsSetupCompleted": true,
-    "instanceId": "dca8a47b4d1e3f6a91b2412d750295215bfefbda8f09c9f8cce899146e17eb03"
+    "instanceId": "32fbabee2a6492845d8f64cfb4388099c237f7b7cbc53f9990124e10611ef286"
   },
-  "id": "rpx6SbZMacU3CNyP",
+  "id": "bKPTB2hjdUVv1U1h",
   "tags": []
 }
