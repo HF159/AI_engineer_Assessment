@@ -166,4 +166,4 @@ Escalation overrides routing when: confidence < 0.7, outage/multiple users keywo
 - `samples.sh` — 5 sample inputs to test the pipeline
 - `Outputs.json` — processed results for all 5 samples
 - Google Sheet: [[link](https://docs.google.com/spreadsheets/d/1iRZAXvvScl0IBaWZElzWK5e7Fbx8PdDrLlp-0-qTQUg/edit?usp=sharing)]
-- Loom recording: [link]
+- Loom recording: [[link](https://www.loom.com/share/56c7544ad4f84c3fae3a7d48a910aa0a)]
